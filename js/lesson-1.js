@@ -46,3 +46,67 @@ alert(message);
 // введе в prompt щось інше. В такому випадку result має набувати значення:
 // "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
 // Значення змінної result виведіть в консоль.
+const inputs = prompt("Введіть число: '1', '2', '3' або '4'");
+const num = Number(inputs);
+let result = "";
+switch (num) {
+  case 1:
+    result = "зима";
+
+    break;
+  case 2:
+    result = "весна";
+    break;
+  case 3:
+    result = "літо";
+
+    break;
+  case 4:
+    result = "осінь";
+
+    break;
+
+  default:
+    result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
+}
+alert(result);
+console.log(result);
+// Завдання 4.
+// Отримуйте від користувача число (кількість хвилин) через prompt
+// і виводьте у консоль рядок у форматі годин та хвилин.
+// Приклад: користувач вводить в prompt '70' -> в консолі відобразиться '01:10'.
+// Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
+const inpute = prompt("Введіть кількість хвилин");
+
+const totalMinutes = Number(inpute);
+
+if (isNaN(totalMinutes) || totalMinutes < 0) {
+  console.log("Будь ласка, введіть коректне додатне число.");
+} else {
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+
+  // Форматуємо до двозначного вигляду (наприклад, 01:09)
+  const formattedHours = String(hours).padStart(2, "0");
+  const formattedMinutes = String(minutes).padStart(2, "0");
+
+  console.log(`${formattedHours}:${formattedMinutes}`);
+}
+//Завдання 5.
+// Напишіть код, який запитуватиме у користувача
+// логін за допомогою prompt і виводить результат в консоль браузера
+
+// Після цього додайте перевірку введеного користувачем значення:
+// Якщо відвідувач вводить "Адмін",
+// то prompt запитує пароль (не забудьте зберігти його у змінну для подальшої перевірки).
+// Якщо нічого не ввели або натиснули Cancel,
+// Вивести в alert строку "Скасовано"
+// В іншому випадку вивести в alert рядок "Я вас не знаю"
+
+// Пароль перевіряти так:
+// Якщо введено пароль "Я головний",
+// то вивести в alert рядок "Добрий день!",
+// в іншому випадку вивести в alert рядок "Невірний пароль!"
+//Завдання 6.
+// Використайте цикл while, щоб вивести в console всі числа від 0 до 20 включно.
