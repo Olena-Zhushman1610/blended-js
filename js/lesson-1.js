@@ -92,6 +92,7 @@ if (isNaN(totalMinutes) || totalMinutes < 0) {
   const formattedMinutes = String(minutes).padStart(2, "0");
 
   console.log(`${formattedHours}:${formattedMinutes}`);
+  alert(`${formattedHours}:${formattedMinutes}`);
 }
 //Завдання 5.
 // Напишіть код, який запитуватиме у користувача
@@ -108,5 +109,111 @@ if (isNaN(totalMinutes) || totalMinutes < 0) {
 // Якщо введено пароль "Я головний",
 // то вивести в alert рядок "Добрий день!",
 // в іншому випадку вивести в alert рядок "Невірний пароль!"
+const login = prompt("Введіть логін:");
+
+if (login === "Адмін") {
+  const password = prompt("Введіть пароль:");
+
+  if (password === "Я головний") {
+    alert("Добрий день!");
+  } else if (password === null || password === "") {
+    alert("Скасовано");
+  } else {
+    alert("Невірний пароль!");
+  }
+} else if (login === null || login === "") {
+  alert("Скасовано");
+} else {
+  alert("Я вас не знаю");
+}
+
+console.log("Логін:", login);
 //Завдання 6.
 // Використайте цикл while, щоб вивести в console всі числа від 0 до 20 включно.
+function countNumbers(startNum, maxNum) {
+  let numb = startNum; // створюємо локальну змінну
+
+  while (numb <= maxNum) {
+    console.log(numb);
+    numb += 1;
+  }
+}
+
+countNumbers(0, 20);
+// Завдання 7.
+// Напишіть функцію getNumbers(min, max), що приймає 2 параметри -
+// мінімальне і максимальне число відповідно.
+// Напишіть цикл всередині функції, який виводить у консоль
+// всі числа від max до min за спаданням.
+// Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
+// і поверніть її з функції.
+function getNumbers(min, max) {
+  let sum = 0;
+
+  for (let i = max; i >= min; i--) {
+    console.log(i);
+
+    if (i % 2 === 0) {
+      sum += i;
+    }
+  }
+  console.log(sum);
+  return sum;
+}
+
+getNumbers(50, 70);
+// Завданн 8.
+
+// Напишіть функцію min(a, b), яка приймає 2 числа і повертає меньше з них.
+// Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
+// повертати з функції рядок - 'Not a number!'.
+
+function findMin(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    console.log("Not a number!");
+    return "Not a number!";
+  }
+
+  let i = a < b ? a : b;
+  console.log(i);
+  return i;
+}
+
+findMin("20", 15);
+findMin(20, 15);
+// Завдання 9.
+// Напишіть функцію isAdult(age), яка  приймає число - вік користувача і повертає true,
+// якщо параметр age більше чи дорівнює 18.
+// В іншому випадку вона запитує підтвердження через confirm
+// і повертає його результат (true/false).
+function isAdult(age) {
+  //let i =''
+  if (age < 18) {
+    return confirm("Вам немає 18. Ви впевнені, що хочете продовжити?");
+  }
+
+  return true;
+}
+console.log(isAdult(16));
+console.log(isAdult(25));
+
+// Завдання 10.
+// Напишіть функцію fizzBuzz(num), яка приймає число і перевіряє кожне число від 1 до num:
+// Якщо число ділитися  без остачі на 3 - виводить в консоль 'fizz',
+// якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
+// якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
+
+function fizzBuzz(num) {
+  for (let i = 1; i <= num; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+fizzBuzz(15);
