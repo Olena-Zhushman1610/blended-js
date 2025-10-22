@@ -289,12 +289,12 @@ function calcTotalPrice(fruits, fruitName) {
   return total;
 }
 //сучасна стрілочна версія з використанням .filter() і .reduce():
-const calcTotalPrice = (fruits, fruitName) =>
+const calcTotalPricee = (fruits, fruitName) =>
   fruits
     .filter((fruit) => fruit.name === fruitName)
     .reduce((total, fruit) => total + fruit.price * fruit.quantity, 0);
 //Ось однорядковий варіант без .filter() — одразу рахуємо суму:
-const calcTotalPrice = (fruits, fruitName) =>
+const calcTotalPric = (fruits, fruitName) =>
   fruits.reduce(
     (total, fruit) =>
       fruit.name === fruitName ? total + fruit.price * fruit.quantity : total,
